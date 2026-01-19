@@ -2,25 +2,47 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  /* --foreground: #171717; */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-schibsted-grotesk: var(--font-schibsted-grotesk);
+  --font-martian-mono: var(--font-martian-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+
+/* @media (prefers-color-scheme: dark) { */
+  /* :root { */
+    /* --background: #0a0a0a; */
+    /* --foreground: #ededed; */
+  /* } */
+/* } */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+@layer components{
+  #event-card {
+    .poster{
+      @apply h-[300px] w-full rounded-lg object-cover;
+    }
+    .title {
+      @apply text-[20px] font-semibold line-clamp-1;
+    }
+
+    p {
+      @apply text-gray-200 text-sm font-light;
+    }
+    .datetime {
+      @apply text-gray-200 flex flex-row flex-wrap items-center;
+
+      div {
+        @apply flex flex-row gap-2;
+      }
+    }
+  }
 }
